@@ -1,6 +1,25 @@
 {
   "db": {
     "name": "db",
+    "connector": "memory",
+    "file": "db.json"
+  },
+  "memory": {
+    "name": "memory",
     "connector": "memory"
+  },
+  "mongodb": {
+    "name": "mongodb",
+    "connector": "mongodb"
+  },
+  "postgresql": {
+    "port": 5432,
+    "url": "postgres://postgres:123456@0.0.0.0:5432/crias",
+    "database": "crias",
+    "username": "postgres",
+    "password": "123456",
+    "name": "postgresql",
+    "connector": "postgresql",
+    "ip": "104.131.231.21"
   }
 }

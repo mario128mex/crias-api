@@ -3,7 +3,7 @@
     "sources": [
       "loopback/common/models",
       "loopback/server/models",
-      "../common/models",
+      "../loopback/models",
       "./models"
     ],
     "mixins": [
@@ -14,22 +14,35 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "memory",
+    "public": false
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "mongodb",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "memory",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "memory",
     "public": false
   },
   "Role": {
+    "dataSource": "memory",
+    "public": false
+  },
+  "user": {
+    "dataSource": "postgresql",
+    "public": true
+  },
+  "role": {
     "dataSource": "db",
+    "public": true
+  },
+  "roleMapping": {
+    "dataSource": "postgresql",
     "public": false
   }
 }

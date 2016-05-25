@@ -1,0 +1,176 @@
+{
+  "name": "user",
+  "base": "User",
+  "options": {
+    "idInjection": true,
+    "postgresql": {
+      "schema": "public",
+      "table": "usuarios"
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "length": 100,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "nombre",
+        "dataType": "character varying",
+        "dataLength": 100,
+        "dataPresicion": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "username": {
+      "type": "string",
+      "required": true,
+      "length": 100,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "nombre_usuario",
+        "dataType": "character varying",
+        "dataLength": 100,
+        "dataPresicion": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "email": {
+      "type": "string",
+      "required": true,
+      "length": 50,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "correo_electronico",
+        "dataType": "character varying",
+        "dataLength": 50,
+        "dataPresicion": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "password": {
+      "type": "string",
+      "required": true,
+      "length": 60,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "contraseña",
+        "dataType": "character varying",
+        "dataLength": 60,
+        "dataPresicion": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "roleId": {
+      "type": "integer",
+      "required": true,
+      "length": null,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "idu_rol",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPresicion": 32,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "serviceCenterId": {
+      "type": "number",
+      "id": false,
+      "required": false,
+      "length": null,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "idu_centro_servicio",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "receptionCenterId": {
+      "type": "number",
+      "id": false,
+      "required": false,
+      "length": null,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "idu_centro_recepcion",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "deleted": {
+      "type": "boolean",
+      "required": true,
+      "default": false,
+      "postgresql": {
+        "columnName": "eliminado",
+        "dataType": "boolean",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "role": {
+      "type": "belongsTo",
+      "model": "role",
+      "foreignKey": "roleId"
+    },
+    "serviceCenter": {
+      "type": "belongsTo",
+      "model": "serviceCenter",
+      "foreignKey": "serviceCenterId"
+    },
+    "receptionCenter": {
+      "type": "belongsTo",
+      "model": "receptionCenter",
+      "foreignKey": "receptionCenterId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "customLogin"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {},
+  "scopes": {
+    "active": { "where": {"deleted": false} }
+  }
+}

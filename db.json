@@ -1,0 +1,15 @@
+{
+  "ids": {
+    "role": 5
+  },
+  "models": {
+    "role": {
+      "1": "{\"name\":\"admin\",\"created\":\"2016-02-27T00:35:30.550Z\",\"modified\":\"2016-02-27T00:35:30.550Z\",\"id\":1}",
+      "2": "{\"name\":\"supervisor\",\"created\":\"2016-02-27T00:35:30.553Z\",\"modified\":\"2016-02-27T00:35:30.553Z\",\"id\":2}",
+      "3": "{\"name\":\"empleado_centro_recepcion\",\"created\":\"2016-02-27T00:35:30.553Z\",\"modified\":\"2016-02-27T00:35:30.553Z\",\"id\":3}",
+      "4": "{\"name\":\"empleado_centro_servicio\",\"created\":\"2016-02-27T00:35:30.553Z\",\"modified\":\"2016-02-27T00:35:30.553Z\",\"id\":4}",
+      "5": "{\"name\":\"jefe_centro_servicio\",\"created\":\"2016-02-27T00:35:30.553Z\",\"modified\":\"2016-02-27T00:35:30.553Z\",\"id\":5}",
+      "6": "{\"name\":\"jefe_centro_recepcion\",\"created\":\"2016-02-27T00:35:30.553Z\",\"modified\":\"2016-02-27T00:35:30.553Z\",\"id\":6}"
+    }
+  }
+}

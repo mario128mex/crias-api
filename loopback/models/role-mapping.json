@@ -1,0 +1,16 @@
+{
+  "name": "roleMapping",
+  "base": "RoleMapping",
+  "options": {
+    "idInjection": true,
+    "postgresql": {
+      "schema": "public",
+      "table": "mapeoDeRoles"
+    }
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

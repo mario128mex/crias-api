@@ -31,7 +31,6 @@ editUser._createDBObject = request =>{
     updateUser: editUser._updateUser,
     findRole: editUser._findRole,
     createRelationBetweenUserAndRole:editUser._createRelationBetweenUserAndRole,
-    getCenter: editUser._getCenter,
     rollbackTransaction: editUser._rollbackTransaction,
     commitTransaction: editUser._commitTransaction
   };
@@ -120,39 +119,6 @@ editUser._createRelationBetweenUserAndRole = (role, user, transaction) => {
       if(err) return reject(err);
       return resolve(principal);
     });
-  });
-};
-
-editUser._getCenter = (user, transaction) => {
-  return new Promise( (resolve, reject) => {
-    if(user.serviceCenterId){
-      editUser.app.models.serviceCenter
-      .findById(user.serviceCenterId,
-               {transaction: transaction},
-               (err, serviceCenter) => {
-        if(err) return reject(err);
-        if(!serviceCenter) return reject(new NoModelFoundError('Specified ' +
-                                                               'service ' +
-                                                               'center does ' +
-                                                               'not exist'));
-        return resolve(serviceCenter);
-      });
-    }
-    else if(user.receptionCenterId){
-      editUser.app.models.receptionCenter
-      .findById(user.receptionCenterId,
-               {transaction: transaction},
-               (err, receptionCenter) => {
-        if(err) return reject(err);
-        if(!receptionCenter) return reject(new NoModelFoundError('Specified ' +
-                                                                'reception ' +
-                                                                'center does '+
-                                                                'not exist'));
-        return resolve(receptionCenter);
-      });
-    }
-    else
-      return resolve();
   });
 };
 

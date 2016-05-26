@@ -84,38 +84,6 @@
         "nullable": "NO"
       }
     },
-    "serviceCenterId": {
-      "type": "number",
-      "id": false,
-      "required": false,
-      "length": null,
-      "precision": 32,
-      "scale": 0,
-      "postgresql": {
-        "columnName": "idu_centro_servicio",
-        "dataType": "integer",
-        "dataLength": null,
-        "dataPrecision": 32,
-        "dataScale": 0,
-        "nullable": "YES"
-      }
-    },
-    "receptionCenterId": {
-      "type": "number",
-      "id": false,
-      "required": false,
-      "length": null,
-      "precision": 32,
-      "scale": 0,
-      "postgresql": {
-        "columnName": "idu_centro_recepcion",
-        "dataType": "integer",
-        "dataLength": null,
-        "dataPrecision": 32,
-        "dataScale": 0,
-        "nullable": "YES"
-      }
-    },
     "deleted": {
       "type": "boolean",
       "required": true,
@@ -136,16 +104,6 @@
       "type": "belongsTo",
       "model": "role",
       "foreignKey": "roleId"
-    },
-    "serviceCenter": {
-      "type": "belongsTo",
-      "model": "serviceCenter",
-      "foreignKey": "serviceCenterId"
-    },
-    "receptionCenter": {
-      "type": "belongsTo",
-      "model": "receptionCenter",
-      "foreignKey": "receptionCenterId"
     }
   },
   "acls": [

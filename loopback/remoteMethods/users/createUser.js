@@ -22,7 +22,6 @@ saveUser._createDBObject = request =>{
     createUser: saveUser._createUser,
     findRole: saveUser._findRole,
     createRelationBetweenUserAndRole:saveUser._createRelationBetweenUserAndRole,
-    getCenter: saveUser._getCenter,
     rollbackTransaction: saveUser._rollbackTransaction,
     commitTransaction: saveUser._commitTransaction
   };
@@ -68,31 +67,6 @@ saveUser._createRelationBetweenUserAndRole = (role, user, transaction) => {
       if(err) return reject(err);
       return resolve(principal);
     });
-  });
-};
-
-saveUser._getCenter = (user, transaction) => {
-  return new Promise( (resolve, reject) => {
-    if(user.serviceCenterId){
-      saveUser.app.models.serviceCenter
-      .findOne({where: {id:user.serviceCenterId}},
-               {transaction: transaction},
-               (err, serviceCenter) => {
-        if(err) return reject(err);
-        return resolve(serviceCenter);
-      });
-    }
-    else if(user.receptionCenterId){
-      saveUser.app.models.receptionCenter
-      .findOne({where: {id: user.receptionCenterId}},
-               {transaction: transaction},
-               (err, receptionCenter) => {
-        if(err) return reject(err);
-        return resolve(receptionCenter);
-      });
-    }
-    else
-      return resolve(null);
   });
 };
 

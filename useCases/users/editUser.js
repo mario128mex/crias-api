@@ -32,8 +32,6 @@ EditUser.prototype.execute = function(user) {
     .then(this.updateUser.bind(self))
     .then(this.findRole.bind(self))
     .then(this.createRelationBetweenUserAndRoleIfChanged.bind(self))
-    .then(this.getCenter.bind(self))
-    .then(this.atachCenter.bind(self))
     .then(this.commitTransaction.bind(self))
     .then(this.resolvePromise.bind(self));
   });
@@ -141,24 +139,6 @@ EditUser.prototype.createRelationBetweenUserAndRoleIfChanged = function(role) {
 
   promise.catch(this.rollbackTransaction.bind(this));
   return promise;
-};
-
-EditUser.prototype.getCenter = function() {
-  const promise = this.db.getCenter(this.updatedUser, this.transaction);
-  promise.catch(this.rollbackTransaction.bind(this));
-  return promise;
-};
-
-EditUser.prototype.atachCenter = function(center) {
-  return new Promise( (resolve, reject) => {
-    if(this.updatedUser.serviceCenterId)
-      this.updatedUser.serviceCenter = center;
-    
-    else if(this.updatedUser.receptionCenterId)
-      this.updatedUser.receptionCenter = center;
-
-    return resolve(this.updatedUser);
-  });
 };
 
 EditUser.prototype.commitTransaction = function() {

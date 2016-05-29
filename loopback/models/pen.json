@@ -60,7 +60,7 @@
       "precision": 32,
       "scale": 0,
       "postgresql": {
-        "columnName": "capacidad_total",
+        "columnName": "capacidad_actual",
         "dataType": "integer",
         "dataLength": null,
         "dataPrecision": 32,

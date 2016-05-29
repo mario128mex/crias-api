@@ -42,7 +42,7 @@
       "type": "string",
       "length": 200,
       "postgresql": {
-        "columnName": "nombre",
+        "columnName": "descripcion",
         "dataType": "character varying",
         "dataLength": 200,
         "dataPresicion": null,

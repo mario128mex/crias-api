@@ -17,7 +17,7 @@
       "length": 10,
       "postgresql": {
         "columnName": "id_sensor",
-        "dataType": "integer",
+        "dataType": "character varying",
         "dataLength": 10,
         "dataPrecision": null,
         "dataScale": null,

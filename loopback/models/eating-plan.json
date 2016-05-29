@@ -1,0 +1,64 @@
+{
+  "name": "eatingPlan",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true,
+    "postgresql": {
+      "schema": "public",
+      "table": "planes_alimenticios"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true,
+      "generated": true,
+      "required": false,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "id_plan",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "length": 100,
+      "postgresql": {
+        "columnName": "nombre",
+        "dataType": "character varying",
+        "dataLength": 100,
+        "dataPresicion": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "description": {
+      "type": "string",
+      "length": 200,
+      "postgresql": {
+        "columnName": "nombre",
+        "dataType": "character varying",
+        "dataLength": 200,
+        "dataPresicion": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "foods": {
+      "type": "hasAndBelongsToMany",
+      "model": "food",
+      "through": "eatingPlanFood"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

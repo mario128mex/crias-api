@@ -20,6 +20,6 @@
     "password": "123456",
     "name": "postgresql",
     "connector": "postgresql",
-    "ip": "104.131.231.21"
+    "ip": "0.0.0.0"
   }
 }

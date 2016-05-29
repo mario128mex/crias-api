@@ -1,0 +1,65 @@
+{
+  "name": "sensor",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": false,
+    "postgresql": {
+      "schema": "public",
+      "table": "sensores"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "generated": false,
+      "required": true,
+      "length": 10,
+      "postgresql": {
+        "columnName": "id_sensor",
+        "dataType": "integer",
+        "dataLength": 10,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "calfId": {
+      "type": "number",
+      "required": false,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "id_cria",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "deleted": {
+      "type": "boolean",
+      "required": true,
+      "default": false,
+      "postgresql": {
+        "columnName": "eliminado",
+        "dataType": "boolean",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "calf": {
+      "type": "belongsTo",
+      "model": "calf",
+      "foreignKey": "calfId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

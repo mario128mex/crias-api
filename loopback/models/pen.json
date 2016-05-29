@@ -1,0 +1,89 @@
+{
+  "name": "pen",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true,
+    "postgresql": {
+      "schema": "public",
+      "table": "corrales"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true,
+      "generated": true,
+      "required": false,
+      "length": null,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "id_corral",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "penType": {
+      "type": "string",
+      "required": true,
+      "length": 30,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "tipo_corral",
+        "dataType": "character varying",
+        "dataLength": 30,
+        "dataPresicion": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "totalCapacity": {
+      "type": "number",
+      "required": true,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "capacidad_total",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "currentCapacity": {
+      "type": "number",
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "capacidad_total",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "YESs"
+      }
+    },
+    "deleted": {
+      "type": "boolean",
+      "required": true,
+      "default": false,
+      "postgresql": {
+        "columnName": "eliminado",
+        "dataType": "boolean",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

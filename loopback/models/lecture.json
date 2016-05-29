@@ -1,0 +1,127 @@
+{
+  "name": "lecture",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true,
+    "postgresql": {
+      "schema": "public",
+      "table": "lecturas"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true,
+      "generated": true,
+      "required": false,
+      "length": null,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "id_lectura",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "calfId": {
+      "type": "number",
+      "required": true,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "id_cria",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "sensorId": {
+      "type": "string",
+      "required": true,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "id_sensor",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "date": {
+      "type": "date",
+      "required": true,
+      "postgresql": {
+        "columnName": "fecha",
+        "dataType": "timestamp with time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "temperature": {
+      "type": "number",
+      "required": true,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "temperatura",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "heartRate": {
+      "type": "number",
+      "required": true,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "temperatura",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "fatPercentage": {
+      "type": "number",
+      "required": true,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "porcentaje_grasa",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "calf": {
+      "type": "belongsTo",
+      "model": "calf",
+      "foreignKey": "calfId"
+    },
+    "sensor": {
+      "type": "belongsTo",
+      "model": "sensor",
+      "foreignKey": "sersonId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

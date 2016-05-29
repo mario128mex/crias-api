@@ -44,5 +44,33 @@
   "roleMapping": {
     "dataSource": "postgresql",
     "public": false
+  },
+  "pen": {
+    "dataSource": "postgresql",
+    "public": true
+  },
+  "calf": {
+    "dataSource": "postgresql",
+    "public": true
+  },
+  "sensor": {
+    "dataSource": "postgresql",
+    "public": true
+  },
+  "lecture": {
+    "dataSource": "postgresql",
+    "public": true
+  },
+  "eatingPlan": {
+    "dataSource": "postgresql",
+    "public": true
+  },
+  "food": {
+    "dataSource": "postgresql",
+    "public": true
+  },
+  "eatingPlanFood": {
+    "dataSource": "postgresql",
+    "public": false
   }
 }

@@ -43,14 +43,13 @@
     "sensorId": {
       "type": "string",
       "required": true,
-      "precision": 32,
-      "scale": 0,
+      "length": 10,
       "postgresql": {
         "columnName": "id_sensor",
-        "dataType": "integer",
-        "dataLength": null,
-        "dataPrecision": 32,
-        "dataScale": 0,
+        "dataType": "character varying",
+        "dataLength": 10,
+        "dataPrecision": null,
+        "dataScale": null,
         "nullable": "NO"
       }
     },
@@ -86,7 +85,7 @@
       "precision": 32,
       "scale": 0,
       "postgresql": {
-        "columnName": "temperatura",
+        "columnName": "ritmo_cardiaco",
         "dataType": "integer",
         "dataLength": null,
         "dataPrecision": 32,

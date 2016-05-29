@@ -129,6 +129,10 @@
   ],
   "methods": {},
   "scopes": {
-    "active": { "where": {"deleted": false} }
+    "active": {
+      "where": {
+        "deleted": false
+      }
+    }
   }
 }

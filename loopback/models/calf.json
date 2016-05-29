@@ -1,0 +1,194 @@
+{
+  "name": "calf",
+  "plural": "calves",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true,
+    "postgresql": {
+      "schema": "public",
+      "table": "crias"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true,
+      "generated": true,
+      "required": false,
+      "length": null,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "id_cria",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "length": 50,
+      "postgresql": {
+        "columnName": "nombre",
+        "dataType": "character varying",
+        "dataLength": 50,
+        "dataPresicion": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "entryDate": {
+      "type": "date",
+      "required": false,
+      "postgresql": {
+        "columnName": "fecha_ingreso",
+        "dataType": "timestamp with time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "birthDate": {
+      "type": "date",
+      "required": false,
+      "postgresql": {
+        "columnName": "fecha_nacimiento",
+        "dataType": "timestamp with time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "category": {
+      "type": "string",
+      "required": true,
+      "length": 50,
+      "postgresql": {
+        "columnName": "categoria",
+        "dataType": "character varying",
+        "dataLength": 50,
+        "dataPresicion": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "healthStatus": {
+      "type": "string",
+      "required": true,
+      "length": 50,
+      "postgresql": {
+        "columnName": "estatus_salud",
+        "dataType": "character varying",
+        "dataLength": 50,
+        "dataPresicion": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "illnessDate": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "fecha_enfermedad",
+        "dataType": "timestamp with time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "weight": {
+      "type": "number",
+      "required": true,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "peso",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "entryType": {
+      "type": "string",
+      "required": true,
+      "length": 50,
+      "postgresql": {
+        "columnName": "tipo_ingreso",
+        "dataType": "character varying",
+        "dataLength": 50,
+        "dataPresicion": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "penId": {
+      "type": "number",
+      "length": null,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "id_corral",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "sensorId": {
+      "type": "number",
+      "length": null,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "id_sensor",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "deleted": {
+      "type": "boolean",
+      "required": true,
+      "default": false,
+      "postgresql": {
+        "columnName": "eliminado",
+        "dataType": "boolean",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "pen": {
+      "type": "belongsTo",
+      "model": "pen",
+      "foreignKey": "penId"
+    },
+    "sensor": {
+      "type": "hasOne",
+      "model": "sensor",
+      "foreignKey": "sensorId"
+    },
+    "lectures": {
+      "type": "hasMany",
+      "model": "lecture",
+      "foreignKey": "calfId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -29,7 +29,8 @@ saveUser._createDBObject = request =>{
 
 saveUser._beginTransaction = () =>{
   return saveUser.app.models.user.beginTransaction({
-    isolationLevel: 'READ COMMITTED'
+    isolationLevel: 'READ COMMITTED',
+    timeout: 30000
   });
 };
 

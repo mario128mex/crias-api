@@ -2,7 +2,7 @@
   "name": "sensor",
   "base": "PersistedModel",
   "options": {
-    "idInjection": false,
+    "idInjection": true,
     "postgresql": {
       "schema": "public",
       "table": "sensores"
@@ -10,16 +10,30 @@
   },
   "properties": {
     "id": {
-      "type": "string",
+      "type": "number",
       "id": true,
-      "generated": false,
+      "generated": true,
+      "required": false,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "id_sensor",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "code": {
+      "type": "string",
       "required": true,
       "length": 10,
       "postgresql": {
-        "columnName": "id_sensor",
+        "columnName": "clave",
         "dataType": "character varying",
         "dataLength": 10,
-        "dataPrecision": null,
+        "dataPresicion": null,
         "dataScale": null,
         "nullable": "NO"
       }

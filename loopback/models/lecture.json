@@ -41,15 +41,16 @@
       }
     },
     "sensorId": {
-      "type": "string",
+      "type": "number",
       "required": true,
-      "length": 10,
+      "precision": 32,
+      "scale": 0,
       "postgresql": {
         "columnName": "id_sensor",
-        "dataType": "character varying",
-        "dataLength": 10,
-        "dataPrecision": null,
-        "dataScale": null,
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
         "nullable": "NO"
       }
     },
@@ -118,7 +119,7 @@
     "sensor": {
       "type": "belongsTo",
       "model": "sensor",
-      "foreignKey": "sersonId"
+      "foreignKey": "sensorId"
     }
   },
   "acls": [],
